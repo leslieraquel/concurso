@@ -1,0 +1,44 @@
+
+<mat-toolbar color="primary">
+  <span>Mi Tienda</span>
+</mat-toolbar>
+
+
+<div class="container mt-4">
+<div class="row  mt-3 pt-2 pb-3 container_sombras table-responsive">
+
+
+    <mat-form-field class="example-full-width" appearance="outline" >
+      <mat-label>Ingrese un dato para iniciar la búsqueda.</mat-label>
+      <input matInput (keyup)="applyFilter($event)">
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!-- Nombre -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Nombre </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+  <!-- Descripción -->
+  <ng-container matColumnDef="description">
+    <th mat-header-cell *matHeaderCellDef> Descripción </th>
+    <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+  </ng-container>
+
+  <!-- Precio -->
+  <ng-container matColumnDef="price">
+    <th mat-header-cell *matHeaderCellDef> Precio </th>
+    <td mat-cell *matCellDef="let element"> {{element.price | currency}} </td>
+  </ng-container>
+
+  <!-- Header y celdas -->
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+</div>
+
+</div>
+

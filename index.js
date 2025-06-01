@@ -18,6 +18,7 @@ app.use(cors());
 
 
 app.use(require('./api/index'));
+
 app.use('/api/search-receipt', routerSearchReceipt);
 app.use('/api/downloads', routerDownloads);
 

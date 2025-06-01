@@ -1,0 +1,74 @@
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 200px;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.price {
+  font-weight: bold;
+  color: green;
+}
+
+button {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+mat-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.title {
+  margin-left: 8px;
+  font-weight: bold;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+.custom-search {
+  width: 100%;
+  max-width: 400px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 4px 8px;
+}
+
+.custom-search.mat-form-field {
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.custom-search .mat-form-field-flex {
+  background-color: #f5f5f5;
+  border-radius: 6px;
+}
+
+.custom-search .mat-input-element {
+  color: #333;
+}
+
+.custom-search .mat-form-field-outline {
+  border: none;
+}
