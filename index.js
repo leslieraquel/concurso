@@ -1,8 +1,8 @@
 const express = require('express');
 const app = express();
 const morgan = require('morgan');
-// const routerSearchReceipt = require("./api/search-receipt/routes.js");
-// const routerDownloads = require("./api/downloads/routes.js");
+const cliente = require("./api/cliente/routes.js");
+const producto = require("./api/producto/routes.js");
 const cors = require('cors');
 
 
@@ -19,8 +19,8 @@ app.use(cors());
 
 app.use(require('./api/index'));
 
-app.use('/api/search-receipt', routerSearchReceipt);
-app.use('/api/downloads', routerDownloads);
+app.use('/api/cliente', cliente);
+app.use('/api/producto', producto);
 
 app.listen(app.get('port'),() => {
     console.log(`Server listening on port ${app.get('port')}`);
