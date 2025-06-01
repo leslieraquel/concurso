@@ -4,8 +4,9 @@ const cliente = Router()
 
 
 
-cliente.get('/listar-cliente',controller.listarcliente)
-// routerSearchReceipt.post('/search-receipt-numbercard',controller.searchReceiptNumberCard )
-// routerSearchReceipt.post('/validate-xml',controller.validateXml)
+cliente.post('/listar-cliente',controller.listarcliente)
+cliente.get('/editar-cliente',controller.editarCliente)
+cliente.get('/eliminar-cliente',controller.eliminarCliente)
+
 
 module.exports = cliente;

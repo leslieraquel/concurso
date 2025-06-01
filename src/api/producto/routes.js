@@ -1,11 +1,12 @@
 const { Router } = require("express");// express, handler
 const controller  = require("./controller")
-const cliente = Router()
+const producto = Router()
 
 
 
-cliente.get('/listar-producto',controller.listarcliente)
-// routerSearchReceipt.post('/search-receipt-numbercard',controller.searchReceiptNumberCard )
-// routerSearchReceipt.post('/validate-xml',controller.validateXml)
+producto.post('/listar-producto',controller.listarProducto)
+producto.get('/editar-producto',controller.editarProducto)
+producto.get('/eliminar-producto',controller.eliminarProducto)
 
-module.exports = cliente;
+
+module.exports = producto;

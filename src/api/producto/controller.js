@@ -22,4 +22,33 @@ controller.listarProducto = async (request,res) => {
     }
 };
 
+controller.editarProducto = async (request,res) => {
+
+    const { codigoProducto, nombreProducto,descripcionProducto,tallaProducto,colorProducto } = req.body;
+    try {
+
+        const [result] = await db.execute(`update producto set nombre=?,descripcion=?,talla=?,color=? where codigo = ?`,
+                                     [nombreProducto, descripcionProducto,tallaProducto,colorProducto,codigoProducto]);
+
+        return res.send({ message: 'Producto actualizado', status:"success", data:[], error: [] }).status(200);
+
+    } catch (error) {
+        return res.send({ message: error, status:"error", data:[], error: error }).status(400);
+    }
+};
+
+controller.eliminarProducto = async (request,res) => {
+
+    const { codigoProducto} = req.body;
+    try {
+
+        const [result] = await db.execute(`detele from producto where codigo = ?`,[codigoProducto]);
+
+        return res.send({ message: 'Producto eliminado con exito', status:"success", data:[], error: [] }).status(200);
+
+    } catch (error) {
+        return res.send({ message: error, status:"error", data:[], error: error }).status(400);
+    }
+};
+
 module.exports = controller;
